@@ -1,0 +1,57 @@
+.tabla{
+    background-color: #406ff3;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 22px;
+}
+
+.container {
+    position: absolute;
+    z-index: 300;
+    margin-top: 1rem;
+    max-width: 100%;
+    padding-left: 1rem;
+
+    padding-right: 1rem;
+    transition: all ease-in-out 0.3s;
+    }
+    @media (max-width: 768px) {
+        .container {
+            padding-left: 2.5rem;
+
+        }
+    }
+    .fila-h{
+        border-radius: 15px;
+        padding: 20px 20px;
+        margin-bottom: 1rem;
+        background: #406ff3;
+        color: white;
+        transition: all ease-in-out 0.3s;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); 
+        gap: 10px;
+        justify-content: center;
+        justify-items: center;   
+        align-items: center;     
+        text-align: center;      
+        width: 100%; 
+        }
+        
+        .tabla .fila{
+        border-radius: 15px;
+        padding: 15px 20px;
+        margin-bottom: 1rem;
+        background: white;
+        transition: all ease-in-out 0.3s;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); 
+        gap: 10px;
+        justify-content: center;
+        justify-items: center;   
+        align-items: center;     
+        text-align: center;      
+        width: 100%; 
+        }
+        

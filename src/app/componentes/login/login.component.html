@@ -1,0 +1,28 @@
+<app-alertalogin (cerrar)="cerraraviso()" *ngIf="avisovisible">
+
+</app-alertalogin>
+<div class="container">
+    <div class="fprin">
+        <div class="icono">
+            <i class="bi bi-box-arrow-in-right"></i>
+        </div>
+        <div class="title">
+            <p>LOGIN</p>
+        </div>
+        <div class="inicio">
+            <div class="bub">
+            <p>Correo Electrónico</p>
+            <i class="bi bi-envelope"></i>
+            <input id="iemail" type="text" placeholder="l...@queretaro.tecnm.mx" [(ngModel)]="usuario.email">
+            </div>
+            <div class="bub">
+
+            <p >Contraseña:</p>
+            <i class="bi bi-lock"></i>
+            <input id="ipass" type="password" placeholder="******" [(ngModel)]="usuario.pass"></div>
+            <button (click)="iniciarSesion(usuario.email, usuario.pass)" class="btn">INICIAR SESION</button>
+            <button [ngClass]="{'botonactivo': ClassOnSelec}" (click)="signInWithGoogle()" class="btn2">         <i class="bi bi-google"></i>
+            Iniciar con Google</button>
+        </div>
+    </div>
+</div>

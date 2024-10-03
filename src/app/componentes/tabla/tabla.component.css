@@ -1,0 +1,128 @@
+body{
+	background:#eee;
+	font-family:arial;
+ }
+ .container{
+	transition: all ease 1s;
+
+ }
+ .title{
+	transition: all ease 1s;
+
+	text-align:center;
+	background:#406ff3;
+	border-radius:22px 22px 0 0;
+	padding: 1rem;
+	color:white;
+	font-size: 1.8rem;
+	font-weight:bolder;
+	pointer-events:none;
+ }
+ .frame{
+	background:white;
+	position:relative;
+ box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.1);
+	height: auto;
+	width: 55vh;
+	border-radius:22px;
+	left: calc(8rem + 25vw);
+	top:2rem	;
+	transition: all ease 1s;
+ }
+ .parrafos{
+	padding-left:2rem;  
+	transition: all ease 2s;
+	z-index:1;
+	overflow: hidden;
+	margin-top:0.5rem;	transition: all ease 1s;
+	text-overflow: ellipsis; 
+ }
+ p{
+	position:relative;
+	   font-weight:bold;
+	padding-top:1rem;
+	   margin-bottom:1rem;
+ 
+ }
+ 
+ span{
+	position:relative;
+	padding-bottom:1rem;
+ }
+ 
+ .frame:hover{
+	transform: scale(1.02);
+	box-shadow: 0px 3px 9px 5px rgba(0, 0, 0, 0.18);
+}
+
+.bot header{
+	display: flexbox;
+	flex-direction: column;
+	padding: 1rem;
+	border-radius: 22px;
+	width: fit-content;
+	margin-left: 4rem;
+	transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+	background:#406ff3;color: white;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+.bot header:hover{
+	transform: scale(1.02);
+	box-shadow: 0px 3px 9px 5px rgba(0, 0, 0, 0.18);
+
+}
+.bot2{
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .parrafos{
+		padding-left:unset;  
+
+	}
+	.frame{
+		top: unset;
+		left:unset;
+		margin-top: 5rem;
+		width: auto;
+		height: auto;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+	}
+	.container{
+		padding-top: 2rem;
+		padding-left: 2.5rem;
+		padding-right: 1.2rem;
+
+	}
+	.title{
+		position: absolute;
+		top: -6rem;
+		width: 100%;
+		border-radius:22px;}
+	.bot header{
+		border-radius:22px;
+		background:#406ff3;color: white;
+		padding: 1rem;
+		width: unset;
+		margin-left: unset;
+		
+		text-align: center;
+		transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+	}
+	.bot{padding-top: 1.4rem;
+	}
+	.bot header:hover{
+		transform: scale(1.02);
+		box-shadow: 0px 3px 9px 5px rgba(0, 0, 0, 0.18);
+
+	}
+	
+ }

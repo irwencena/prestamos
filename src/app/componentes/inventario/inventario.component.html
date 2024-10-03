@@ -1,0 +1,69 @@
+
+<app-add-inv 
+[isVisible]="isModalVisible"
+(modalClosed)="closeModal()"
+(itemAdded)="addItem($event)">
+</app-add-inv >
+
+<app-edit-inv 
+(editClosed)="closeEdit()" 
+[isVisibleEdit]="isEditVisible"
+[selectedItem]="selectedItem"
+(itemEdited)="itemEdited($event)"
+(itemBorrar)="itemDelete($event)"
+>
+
+</app-edit-inv>
+
+<div class="filtro">
+  <div class="frame">
+    <div class="icon"><i class="bi bi-funnel-fill"></i></div>
+    <div class="item">Estado:</div>
+    <div class="inputs" [formGroup]="categoriaForm">
+      <select formControlName="estadoSeleccionado">
+        <option value="none">Ninguno</option>
+        <option value="Disponible">Disponible</option>
+        <option value="No disponible">No Disponible</option>
+      </select>
+    </div>
+    <div class="item">Categorías:</div>
+    <div class="inputs" [formGroup]="categoriaForm">
+      <select  formControlName="categoriaSeleccionada">
+        <option value="none">Ninguno</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+    </select>      </div>
+    <div class="icon">   <i id="iCat" class="bi bi-plus-circle-fill"></i> </div> 
+
+  </div>
+</div>
+
+<div class="container">
+    
+    <ul class="tabla">
+      <li class="fila-h">
+        <div class="col1">S/N</div>
+        <div class="col1">No. Economico</div>
+        <div class="col1">Articulo</div>
+        <div class="col1">Estado</div>
+        <div class="col1">Categoría</div>
+      </li><div *ngIf="isLoading" class="spinner">
+        <div class="loading-spinner"></div>
+        Cargando datos...
+      </div>
+      <li *ngFor="let inv of filteredInventario" class="fila" (click)="mandar(inv.noeco)">
+        <div class="col1">{{ inv.sn }}</div>
+        <div class="col1">{{ inv.noeco }}</div>
+        <div class="col1">{{ inv.articulo }}</div>
+        <div class="col1" style="font-size: smaller;" [ngStyle]="{ color: inv.estado === 'Disponible' ? '#406ff3' : 'red' }">{{ inv.estado }}</div>
+        <div class="col2" [ngStyle]="{ color: inv.categoria === 'Categoria 2' ? '#406ff3' : '#ffaf3e' }">
+          {{ inv.categoria }}
+        </div>
+      </li>
+    </ul>
+    <div class="adding">
+      <span class="icon" (click)="openModal()">
+        <i class="bi bi-plus-circle-fill"></i>
+      </span>
+    </div>
+  </div>
+  

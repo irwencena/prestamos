@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <ul class="menu">
+       <li class="item">
+         <i class="bi bi-house"></i>
+          <a  class="linka"><span>Home</span></a>
+       </li>
+       <li class="item" *ngIf="usuario.nivel === 'Docente'" routerLink="/inventario" routerLinkActive="selec" (click)="inv()">
+         <i class="bi bi-database-fill"></i>
+         <a class="linka"><span>Inventario</span></a>
+       </li>
+       <li class="item" routerLink="/prestamos" routerLinkActive="selec" (click)="prestamos()">
+         <i class="bi bi-box-fill"></i>
+          <a  class="linka"><span>Préstamos</span></a>
+       </li>
+       <li class="item" *ngIf="usuario.nivel === 'Docente'" routerLink="/administrar" routerLinkActive="selec" (click)="administrar()">
+         <i class="bi bi-inboxes-fill"></i>
+
+          <a  class="linka"><span>Administrar</span></a>
+       </li>
+       <li class="item" routerLink="/perfil" routerLinkActive="selec" (click)="perfil()">
+         <i class="bi bi-person-fill" ></i>
+          <a  class="linka"><span>Perfil</span></a>
+       </li>
+       <li class="item-salir" (click)="salir()">
+         <i class="bi bi-box-arrow-in-left"></i>
+         <a href="" class="linka"><span>Salir</span></a>
+       </li>
+    </ul>
+ </nav>

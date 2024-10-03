@@ -1,0 +1,40 @@
+<div class="modal-background" *ngIf="isVisibleEdit" (click)="closeEdit()"></div>
+
+ <div class="container" *ngIf="isVisibleEdit" >  <h2>Editar articulo</h2>
+
+<div class="modal-content">
+  <form class="forma" (ngSubmit)="testing()">
+    <div class="inputs"><label for="sn">S/N (Opcional):</label>
+      <input [(ngModel)]="selectedItem.sn" value="{{ selectedItem.sn }}" type="number"  id="sn" name="sn"  min="0" step="1">
+    </div>
+<div class="inputs"><label for="noeco">No. Economico:</label>
+  <input [(ngModel)]="selectedItem.noeco" value="{{ selectedItem.noeco }}" type="number"  id="noeco" name="noeco"  required min="0" step="1">
+</div>
+<div class="inputs"><label for="articulo">Artículo: </label>
+    <input [(ngModel)]="selectedItem.articulo"  id="articulo" value="{{selectedItem.articulo}}" name="articulo" required>
+</div>
+<div class="inputs"><label for="estado">Estado:</label>
+  <select value="{{selectedItem.estado}}"  id="estado" [(ngModel)]="selectedItem.estado" name="estado" required>
+    <option value="Disponible">Disponible</option>
+    <option value="No disponible">No disponible</option>
+    
+  </select></div>
+  <div class="inputs" [formGroup]="categoriaForm"> <label for="categoria">Categoría:</label> 
+    <select value="{{selectedItem.categoria}}" formControlName="categoriaSeleccionada" [(ngModel)]="selectedItem.categoria" id="categoria"  name="categoria" required>
+    <option *ngFor="let categoriag of categoriasGet" [value]="categoriag">{{ categoriag }}</option>
+  </select></div>
+
+<!-- <div class="inputs"><label for="categoria">Categoría:</label>
+  <select value="{{selectedItem.categoria}}" [(ngModel)]="selectedItem.categoria"  id="categoria"  name="categoria" required>
+    <option value="Categoria 1">Categoría 1</option>
+    <option value="Categoria 2">Categoría 2</option>
+    <option value="Categoria 3">Categoría 3</option>
+  </select>
+</div> -->
+  <div class="inputs" style="padding-bottom: unset;">
+    <button class="cerrar" type="button" (click)="closeEdit()">Cerrar</button>
+    <button class="cerrar" type="button" (click)="eliminar()">Eliminar</button>
+    <button class="submit" type="submit">Actualizar</button>
+  </div>
+  </form>
+</div></div>

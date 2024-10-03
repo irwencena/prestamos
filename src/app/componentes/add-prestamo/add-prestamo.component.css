@@ -1,0 +1,109 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  .xd{
+    position: absolute;
+		margin-left: 40vw;
+
+    
+		top:calc(50vh / 2.5 );
+    transition: all ease-in-out 0.8s;
+
+	}
+  @media (max-width: 768px) {
+    
+    .xd{
+      margin: 0;
+      margin-left: 20vw;
+      top:calc(50vh / 2.5 );
+      transition: all ease-in-out 0.8s;
+
+    }
+   }
+  .modal-content {
+
+    z-index: 200;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width:fit-content;
+    overflow: hidden;
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.4s;
+
+  }
+
+  .modal-content:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .forma{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .forma input{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    max-width: 70%;
+    border-radius: 22px;
+    border: solid 1px;
+    padding: 0.3rem 0.4rem;
+    padding-left: 0.8rem;
+  }
+   .submit, .cerrar{
+    border-radius: 22px;
+    padding: 0.5rem;
+    color: #406ff3;
+    border: solid 1px;
+    background: white;
+    transition: all ease-in-out 0.2s;
+    margin-right: 1.2rem;
+  }
+  .submit:hover{
+    color: white;
+    background: #406ff3;
+  }
+  .cerrar:hover{
+    color: white;
+    background: red;
+  }
+
+  .cerrar{
+    color: red;
+  }
+  .selec{
+    padding: 0.3rem;
+    border-radius: 22px;
+    color: #406ff3;
+    background: white;
+    border: solid 1px;
+    transition: all ease-in-out 0.2s;
+    margin-bottom: 0.2rem;
+    margin-left: 1rem;
+
+
+  }
+  .selec:hover{
+    color: white;
+    background: #406ff3;
+  }
+  .sel{
+    z-index: 300;
+  }
+  .vista{    
+    
+  }

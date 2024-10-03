@@ -1,0 +1,131 @@
+
+
+.container {
+    margin-top: 1rem;
+    
+    max-width: 100%;
+    padding-left: 6rem;
+
+    padding-right: 1rem;
+  
+    transition: all ease-in-out 0.5s;
+  }
+  
+.fila-h{
+    border-radius: 15px;
+    padding: 20px 20px;
+    margin-bottom: 1rem;
+    background: #406ff3;
+    color: white;
+    transition: all ease-in-out 0.3s;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;   
+    align-items: center;     
+    text-align: center;      
+    width: 100%; 
+}
+
+  .tabla .fila{
+    border-radius: 15px;
+    padding: 15px 20px;
+    
+    margin-bottom: 1rem;
+    background: white;
+    transition: all ease-in-out 0.3s;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;   
+    align-items: center;     
+    text-align: center;      
+    width: 100%; 
+  }
+
+  .fila:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+    
+
+  }
+  .fila-h:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .adding {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 1rem; 
+    margin-left: 45vw;
+    margin-right: 50vw;
+    transform: scale(3);
+    color: #406ff3;
+    transition: all ease-in-out 0.8s;
+
+  }
+  
+.adding:hover{    transition: all ease-in-out 0.2s;
+
+    transform: scale(3.3);  
+}
+.adding:active{
+    transform: scale(2.5);  
+    transition: all ease-in-out 0.12s;
+
+}
+
+
+/* Spinner de carga */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #406ff3;
+    border-radius: 50%;
+    width: 35px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-top: 10vh;
+  }
+  @media (max-width: 768px) {
+    *{
+      font-size: small;
+    
+    }
+    .container{
+      padding-left: 1.2rem;
+
+      padding-bottom: 1rem;
+  
+    }
+    .adding{
+      transform: scale(4.5);
+    }
+    .adding:hover{
+      transform: scale(4.5);  
+      }
+      .adding:active{
+      transform: scale(4.2);  
+      transition: all ease-in-out 0.12s;
+      
+      }
+   }

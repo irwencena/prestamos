@@ -1,0 +1,30 @@
+<div class="modal-background"></div>
+<div class="container">
+  <h2>Establecer contraseña</h2>
+  <div class="modal-content">
+    <form [formGroup]="passwordForm" (ngSubmit)="onSubmit()">
+      <div class="inputs">
+        <label for="newPassword">Nueva contraseña:</label>
+        <input type="text" formControlName="newPassword" required minlength="6">
+      </div>
+      <div class="inputs">
+        <label for="confirmPassword">Confirmar contraseña:</label>
+        <input type="text" formControlName="confirmPassword" required minlength="6">
+      </div>
+
+      <!-- Mostrar error si las contraseñas no coinciden -->
+      <div style="text-align: center; color: red;" *ngIf="passwordForm.errors?.['mismatch2'] && passwordForm.touched" class="error">
+        La contraseña debe contener mínimo 6 caracteres
+      </div>
+      <div style="text-align: center; color: red;" *ngIf="passwordForm.errors?.['mismatch'] && passwordForm.touched" class="error">
+        Las contraseñas no coinciden
+      </div>
+      
+
+      <div class="inputs" style="padding-bottom: unset;">
+        <button class="cerrar" type="button" (click)="onCancel()">Cancelar</button>
+        <button class="submit" type="submit" [disabled]="passwordForm.invalid">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

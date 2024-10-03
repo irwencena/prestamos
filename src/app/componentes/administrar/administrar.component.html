@@ -1,0 +1,45 @@
+<div class="container">
+  <ul class="tabla">
+    <li class="fila-h">
+      <div class="col1">No. de control</div>
+      <div class="col1">Nombre</div>
+      <div class="col1">Correo</div>
+      <div class="col1">Carrera</div>
+    </li>
+    <div *ngIf="isLoading" class="spinner">
+      <div class="loading-spinner"></div>
+      Cargando datos...
+    </div>
+    <li *ngFor="let user of users" class="fila" [ngClass]="{ 'activePrestamo': user.isHighlighted }" (click)="togglePrestamo(user)">
+      <div class="principal">
+        <div class="col1">{{ user.nocontrol }}</div>
+        <div class="col1">{{ user.nombre }}</div>
+        <div class="correo">{{ user.email }}</div>
+        <div class="col1">{{ user.carrera }}</div>
+      </div>
+
+      <!-- Mostrar préstamos de cada usuario -->
+      <div class="secundario" >
+        <li class="subfila-h">
+          <div class="col1">Fecha</div>
+          <div class="col1">Articulo</div>
+          <div class="col1">Devolución</div>
+          <div class="col1">Estado</div>
+        </li>
+        <li *ngFor="let prestamo of user.prestamos" class="fila2"
+        >
+          <div class="col1">{{ prestamo.fecha }}</div>
+          <div class="col1">{{ prestamo.articulo }}</div>
+          <div class="col1">{{ prestamo.devolucion }}</div>
+          <div class="estado">
+            <select [(ngModel)]="prestamo.estado">
+              <option value="Pendiente">Pendiente</option>
+              <option value="Retrasado">Retrasado</option>
+              <option value="Entregado">Entregado</option>
+            </select>
+          </div>
+        </li>
+      </div>
+    </li>
+  </ul>
+</div>

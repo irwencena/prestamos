@@ -1,0 +1,223 @@
+
+.containerr{
+    background:white;
+    position:relative;
+    height: calc(1rem + 72vh);;
+    width: 55vh;
+    border-radius:22px;
+    left: calc(8rem + 25vw);
+    top: calc(1rem + 10vh);
+    transition: all ease 0.6s;
+ 
+}
+.filtro{
+  margin-top: 1rem;
+  padding-left: 8rem;
+  max-width: 100%;
+  padding-right: 1rem;
+  transition: all ease-in-out 0.5s;
+}
+
+.filtro select{
+  border: solid 1px;
+width: fit-content;
+padding: 0.3rem 0.4rem;
+padding-left: 0.8rem;
+   border-radius: 22px;
+border: solid 1px white;
+background-color: #fff;
+}
+
+.frame:hover{
+  transform: scale(1.02);
+  box-shadow: 3px 5px 8px 2px rgba(0, 0, 0, 0.2);
+
+}
+.frame{    transition: all ease-in-out 0.5s;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+overflow: hidden;
+display: grid;
+background: #406ff3;
+border-radius: 22px;
+grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); 
+gap: 10px;
+justify-content: center;
+justify-items: center;   
+align-items: center;     
+text-align: center;
+color: white;
+
+transition: all ease-in-out 0.5s;
+
+}
+
+
+
+.frame .icon i{  
+  
+  color: white;
+  font-size: medium;
+}
+.container {
+margin-top: 1rem;
+
+max-width: 100%;
+
+padding-left: 6rem;
+padding-right: 1rem;
+transition: all ease-in-out 0.5s;
+}
+
+.fila-h{
+border-radius: 15px;
+padding: 20px 20px;
+margin-bottom: 1rem;
+background: #406ff3;
+color: white;
+transition: all ease-in-out 0.3s;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); 
+gap: 10px;
+justify-content: center;
+justify-items: center;   
+align-items: center;     
+text-align: center;      
+width: 100%; 
+}
+
+
+#iCat{
+  padding-left: 0.3rem;
+  font-size: x-large;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+}
+.tabla .fila{
+border-radius: 15px;
+padding: 15px 20px;
+
+margin-bottom: 1rem;
+background: white;
+transition: all ease-in-out 0.3s;
+display: grid;
+overflow: hidden;
+grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); 
+gap: 22px;
+justify-content: center;
+justify-items: center;   
+align-items: center;     
+text-align: center;      
+width: 100%; 
+ text-overflow: ellipsis;  
+}
+
+.tabla .fila:hover{
+transform: scale(1.02);
+background: #7ea1ff;
+color: white;
+box-shadow: 3px 5px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.fila-h:hover{
+transform: scale(1.01);
+box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+
+}
+
+.adding{
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 1rem;
+  margin-left: 45vw;
+  margin-right: 50vw;
+  transform: scale(3);
+  color: #406ff3;
+  transition: all ease-in-out 0.8s;
+}
+.adding:hover{
+transform: scale(3.3);  
+}
+.adding:active{
+transform: scale(2.5);  
+transition: all ease-in-out 0.12s;
+
+}
+
+
+/* Spinner de carga */
+.loading-spinner {
+border: 4px solid rgba(0, 0, 0, 0.1);
+border-left-color: #406ff3;
+border-radius: 50%;
+width: 35px;
+height: 50px;
+animation: spin 1s linear infinite;
+margin: 20px auto;
+}
+
+@keyframes spin {
+to {
+  transform: rotate(360deg);
+}
+}
+
+.spinner {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100px;
+margin-top: 10vh;
+}
+
+
+@media (max-width: 768px) {
+  *{
+    font-size: small;
+  
+  }
+	.container{
+		transition: all ease-in-out 0.5s;
+
+        padding-left: 0.5rem;
+
+	}
+  .filtro{
+    padding-left: 2.5rem;
+
+  }
+
+  .frame{
+    grid-template-columns: unset; 
+    height: 2.3rem;
+    grid-template-rows: repeat(auto, minmax(120px, 1fr)); 
+gap: 2px;
+  }
+  .frame:hover{
+    height: 11.2rem;
+  
+  }
+  .adding{
+    transform: scale(4.5);
+  }
+  .adding:hover{
+    transform: scale(4.5);  
+    }
+    .adding:active{
+    transform: scale(4.2);  
+    transition: all ease-in-out 0.12s;
+    
+    }
+    
+ }
+
+
+ .seccion{
+  display: flex;
+  flex-direction: column;
+ }

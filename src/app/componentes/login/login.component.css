@@ -1,0 +1,231 @@
+body{
+}
+
+.container{
+display: flexbox;
+position: relative;
+}
+
+.fprin{    overflow: hidden;
+background: white;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 15vh;
+ flex-direction: column;    
+ border-radius: 1rem;
+ box-shadow: 5px 2px 8px 1px rgba(0, 0, 0, 0.2);
+ height: 23rem;
+ width: 17rem;
+ padding: 1rem;
+position:relative;
+transition: all ease-in-out 0.4s;
+}
+.fprin:hover{
+transform: scale(1.02);
+box-shadow: 2px 2px 16px 1px rgba(0, 0, 0, 0.4);
+}
+.fprin:hover > .title{
+font-size: 1.5rem;
+}
+
+.title{
+font-family: Helvetica;
+ background-color: #406ff3;
+ color: white;
+ text-align: center;
+ font-weight: bolder;
+width: 100%;
+ padding: 10px 0;
+ text-align: center;
+ color: white;
+ position: absolute;
+ top: 0;
+font-size: 1.6rem;
+ left: 0;
+ right: 0;
+ border-top-left-radius: 12px;
+ border-top-right-radius: 12px;
+ transition: all ease-in-out 0.4s;
+
+}
+
+.inicio{ 
+padding: 80px 20px 20px;
+ text-align: center;
+ position: relative;
+ z-index: 1;
+}
+.inicio p{
+text-align:left;
+padding-left:1rem;
+font-size:0.98rem;
+   margin-bottom:0.4rem;
+
+}
+
+
+.inicio input{
+ flex-direction: column;
+border-radius:18px;
+height: 1.9rem;
+width: 90%;
+padding-left: 1rem;
+padding-right: 1rem;
+margin-bottom:1.5rem;
+transition: all ease 0.1s;
+}
+.btn{
+border-radius: 18px;
+padding: 0.55rem;
+width: 90%;
+background-color: #406ff3;
+font-weight: bolder;
+color:white;   border:none;
+
+transform: scale(1.18);
+transition: all ease 0.4s;
+}
+
+.btn:hover{
+transform: scale(1.25);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+
+}
+
+.btn:active{
+transform: scale(1);   transition: all ease 0.1s;
+
+}
+
+input:hover{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.btn2{
+margin-top:5%;
+border-radius: 18px;
+padding: 0.45rem;
+width: 90%;
+background-color: white;
+font-weight: bolder;
+color:#406ff3;   
+border-color:#406ff3;
+
+transform: scale(1);
+transition: all ease 0.4s;
+}
+
+.btn2:hover{
+transform: scale(1.18);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+
+}
+
+.btn2:active{
+transform: scale(1);   transition: all ease 0.1s;
+background-color: #406ff3;
+color:white;
+border-color:#406ff3;
+}
+
+p{
+font-family: Helvetica;
+}
+
+.icono{display: none;}
+.bub i{display: none;}
+@media (max-width: 768px) {
+    
+    .botonactivo{
+        transition: all ease-in-out 1.5s;
+        position: fixed;
+        margin-top: unset;
+        padding-top: unset;
+        border-radius: 0px;
+        top: 0;
+        left: 0rem;
+        height: 100%;
+        margin-left: unset;
+        width: 100%;
+        pointer-events:none;
+    }
+    .icono{
+        box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.05);
+
+        position: relative;
+        margin-top: 3rem;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #406ff3;
+        color: white;
+        border-radius: 22px;
+        width: 100%;
+        height: fit-content;
+        display: grid;
+    }
+.inicio input{
+    border: none;
+    width: 80%;
+}
+.bub:hover{
+    transition: all ease-in-out 0.5s;
+    transform: scale(1.04);
+    box-shadow: 0px 0px 15px 9px rgba(64, 111, 243, 0.2);
+
+}
+.inicio input:focus{
+    outline: none;
+    border-bottom: 2px solid #406ff3;
+
+}
+.inicio p{
+    transition: all ease-in-out 0.3s;
+}
+.inicio:focus-within p {
+    color: #406ff3;
+}
+.inicio:focus-within .bub i {
+    color: #406ff3;
+}
+input:not(:placeholder-shown) {
+    border-bottom: 2px solid #406ff3; 
+}
+
+.inicio .bub i{
+    display: inline-block;
+    padding-left: 0.2rem;
+    padding-right: 1rem;
+    color: black;
+    transition: all ease-in-out 0.3s;
+
+}
+
+
+    .icono i{
+        font-size: 3.5rem;
+        padding: 0.6rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .bub{    transition: all ease-in-out 0.5s;
+        box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.05);
+
+        padding-top: 0.8rem;
+        border-radius: 22px;
+        background-color: white;
+        margin-top: -1rem;
+        margin-bottom: 3rem;
+    }
+    .title{
+        display: none;
+        width: unset;
+        border-radius: unset;
+    }
+    .fprin{
+        all: unset;
+        margin-left: auto;
+        margin-top: 50%;
+    }
+ }

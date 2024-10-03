@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="frame">
+	   <header class="title">
+		  PERFIL
+	   </header>
+	   <div class="parrafos">
+		<p>Nombre:</p>
+		<span>{{ usuario.nombre }}</span>
+		<p>Correo:</p>
+		<span>{{ usuario.email }}</span>
+		<p>No. de control:</p>
+		<span>{{ usuario.nocontrol }}</span>
+		<p>Carrera:</p>
+		<span>{{ usuario.carrera }}</span>
+		<p>{{ usuario.nivel }}</p>
+	  </div>
+	</div>
+	<div class="bot" *ngIf="usuario.password === false " (click)="establecercontra()">
+		<header >ESTABLECER CONTRASEÑA</header>
+	</div>
+	<div class="bot" *ngIf="usuario.password !== false " (click)="establecercontra()">
+		<header style="background-color: white; color: #406ff3 ;">MODIFICAR CONTRASEÑA</header>
+	</div>
+ </div>

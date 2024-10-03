@@ -1,0 +1,36 @@
+<div class="modal-background" *ngIf="isVisible" (click)="closeModal()"></div>
+
+ <div class="container" *ngIf="isVisible">  <h2>Agregar Nuevo Artículo</h2>
+
+<div class="modal-content" >
+  <form class="forma" (ngSubmit)="addItem()">
+<div class="inputs"><label for="devolucion">No. Economico:</label>
+  <input type="number" id="devolucion" [(ngModel)]="newItem.noeco" name="devolucion"  required min="0" step="1">
+</div>
+<div class="inputs"><label for="devolucion">S/N (Opcional):</label>
+  <input type="number" id="devolucion" [(ngModel)]="newItem.sn" name="devolucion"   min="0" step="1">
+</div>
+<div class="inputs"><label for="articulo">Artículo:</label>
+    <input id="articulo" [(ngModel)]="newItem.articulo" name="articulo" required>
+</div>
+<div class="inputs"><label for="devolucion">Estado:</label>
+  <select id="estado" [(ngModel)]="newItem.estado" name="estado" required>
+    <option value="Disponible" selected>Disponible</option>
+    <option value="No disponible">No disponible</option>
+    
+  </select>
+    <!-- <input type="number" id="devolucion" [(ngModel)]="newItem.cantidad" name="devolucion" required min="0" step="1"> -->
+</div>
+<div class="inputs"><label for="categoria">Categoría:</label>
+  <select id="categoria" [(ngModel)]="newItem.categoria" name="categoria" required>
+    <option value="Categoria 1">Categoría 1</option>
+    <option value="Categoria 2">Categoría 2</option>
+    <option value="Categoria 3">Categoría 3</option>
+  </select>
+</div>
+  <div class="inputs" style="padding-bottom: unset;">
+    <button class="cerrar" type="button" (click)="closeModal()">Cerrar</button>
+    <button class="submit" type="submit">Agregar</button>
+  </div>
+  </form>
+</div></div>

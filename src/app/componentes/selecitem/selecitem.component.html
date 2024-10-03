@@ -1,0 +1,19 @@
+<div *ngIf="isVisibleSelec" class="container">
+
+    <div class="frame">
+        <ul class="tabla">
+            
+            <li class="fila-h">
+                <div class="fila1">SELECCIONAR</div>
+            </li>
+            <li *ngFor="let prestamo of prestamos" class="fila">
+                <div class="col1">{{ prestamo.articulo }}</div>
+                <div class="col1">{{ prestamo.categoria }}</div>
+                <div class="col1" [ngStyle]="{ color: prestamo.estado === 'Disponible' ? '#406ff3' : 'red' }">
+                  {{ prestamo.estado }}
+                </div>
+              </li>
+        </ul>
+    </div>
+
+</div>

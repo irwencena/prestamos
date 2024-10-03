@@ -1,0 +1,25 @@
+<!-- Modal Background -->
+<app-selecitem [isVisibleSelec]="isVisibleSelec" [ngClass]="{'vista': ClassOnSelec}" class="sel"></app-selecitem>
+
+
+<div class="modal-background" *ngIf="isVisible" (click)="closeModal()"></div>
+
+<!-- Modal Content -->
+ <div class="xd">
+<div class="modal-content" *ngIf="isVisible">
+  <h2>Agregar Nuevo Artículo</h2>
+  <form class="forma" (ngSubmit)="addItem()">
+    <div><label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" [(ngModel)]="newItem.fecha" name="fecha" required>
+</div>
+<div><label for="articulo">Artículo:</label>
+    <!-- <input id="articulo" [(ngModel)]="newItem.articulo" name="articulo" required> -->
+     <button type="button" (click)="openselec()" class="selec">Seleccionar </button>
+</div>
+<div><label for="devolucion">Devolución:</label>
+    <input type="date" id="devolucion" [(ngModel)]="newItem.devolucion" name="devolucion" required>
+</div>
+    <button class="submit" type="submit">Agregar</button>
+    <button class="cerrar" type="button" (click)="closeModal()">Cerrar</button>
+  </form>
+</div></div>

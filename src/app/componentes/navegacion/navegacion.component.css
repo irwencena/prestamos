@@ -1,0 +1,141 @@
+
+@media (max-width: 768px) {
+   .navbar {
+      transform: translateX(-90%); /* Mueve el navbar fuera de la pantalla */
+      top: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      z-index: 100;
+      transition: 1250ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+   }
+
+   .selec i{
+      color: white;
+      translate: 1.4rem; 
+   }
+   .navbar:hover .selec i{   font-size: unset;
+
+      translate: unset;
+color:black;
+transition: 450ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+}
+.selec i{
+   font-size: small;
+   transition: 450ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+}
+
+}
+
+.navbar{   transition: 450ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+  
+    position: fixed;
+   top: 1rem;
+   left: 1rem;
+   background: #fff;
+   border-radius: 22px;
+   padding: 0.5rem 0;
+   box-shadow: 0 0 40px rgba(0,0,0,0.03);
+   height: calc(100vh - 0.5rem*4);
+ }
+ .menu{
+        position: relative;
+       padding:0.5rem;
+ 
+ }
+ 
+ .linka{
+         position: absolute;
+         opacity: 0;
+         z-index: -1;
+         top: 20px;
+         left: 1rem;
+
+         width: 2.5rem;
+         color: #406ff3;
+          background:white;
+    padding: 0.5rem;
+    padding-left:2.5rem;
+       padding-right:2.5rem;
+ 
+    text-decoration:none;
+         border-radius: 22px;
+         transition: 250ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+ }
+ .linka{
+    position:relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .item:hover > .linka{
+    opacity: 100%;
+         left: 7rem;
+ 
+ }
+ 
+ .item{
+    padding-bottom: 2.5rem;
+    margin-bottom: calc(6vh - 2rem);
+    transition: 250ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+       border-radius:25px;
+ 
+ }
+ .item:hover{
+    background-color: #406ff3;
+    border-radius:30px;
+ }
+ .item-salir:hover{
+    background-color: #eb4034;
+    border-radius:30px;
+ }
+ .item-salir{
+    padding-bottom: 2.5rem;
+    margin-bottom: 1rem;
+    transition: 250ms cubic-bezier(1, 0.2, 0.1, 1.2) all;
+       border-radius:25px;
+ 
+ }
+ .item-salir:hover > .linka{
+    opacity: 100%;
+         left: 7rem;
+    color:#eb4034;
+ 
+ }
+ 
+ .item:active{
+    transform:scale(0.9);
+      box-shadow: 0 0 10px 0px rgba(0,0,0,0.3);
+ 
+ }
+ .item-salir:active{
+    transform:scale(0.9);
+      box-shadow: 0 0 10px 0px rgba(0,0,0,0.3);
+ 
+ }
+ .navbar:hover{
+    transform:scale(1.01);
+         box-shadow: 0 0 10px 0px rgba(0,0,0,0.12);
+ 
+ }
+
+ li{
+  list-style-type: none;
+}
+
+i{
+  position: absolute;
+  padding: 1.9rem;
+  transform: scale(2.2);
+  color: black;
+  pointer-events: none;
+}
+.item:hover > .i{
+  color:white;
+
+}
+.selec{
+   background-color: #406ff3;
+   border-radius:30px;
+}

@@ -1,0 +1,35 @@
+<app-add-prestamo 
+    [isVisible]="isModalVisible"
+    (modalClosed)="closeModal()"
+    (itemAdded)="addItem($event,usuario)">
+  </app-add-prestamo>
+<div class="container">
+    
+    <ul class="tabla">
+      <li class="fila-h">
+        <div class="col1">Fecha</div>
+        <div class="col1">Articulo</div>
+        <div class="col1">Devolución</div>
+        <div class="col1">Estado</div>
+      </li><div *ngIf="isLoading" class="spinner">
+        <div class="loading-spinner"></div>
+        Cargando datos...
+      </div>
+      <li *ngFor="let prestamo of prestamos" class="fila">
+        <div class="col1">{{ prestamo.fecha }}</div>
+        <div class="col1">{{ prestamo.articulo }}</div>
+        <div class="col1">{{ prestamo.devolucion }}</div>
+        <div class="col1" [ngStyle]="{ color: prestamo.estado === 'Entregado' ? '#406ff3' : '#ffaf3e' }">
+          {{ prestamo.estado }}
+        </div>
+      </li>
+    </ul>
+    <div class="adding">
+      <span class="icon" (click)="openModal()">
+        <i class="bi bi-plus-circle-fill"></i>
+      </span>
+    </div>
+  </div>
+  
+  
+  <!--  -->
