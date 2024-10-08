@@ -15,23 +15,38 @@ export class TablaComponent implements OnInit {
   constructor(private router: Router, private get: DocaddService){}
   usuario: any = {};
   ngOnInit():  void {
-
-    
-
     const invalidEmail = sessionStorage.getItem('invalidEmail');
     if (invalidEmail === 'true') {
         this.router.navigate(['/login']);
     }
-
       const usuarioData = sessionStorage.getItem('usuario');
       if (usuarioData){
           this.usuario = JSON.parse(usuarioData)
       }
-      
-  
-        
-      
+      this.checarpassword('es')
+  }
 
+   checarpassword(esta:string){
+    const usuarioData = sessionStorage.getItem('usuario');
+    if (usuarioData){
+      this.usuario = JSON.parse(usuarioData)
+  }
+    if (esta === 'es'){
+      if(this.usuario.password === true){
+        return false
+      } else {
+        return true
+      }
+    } else if (esta === 'mod'){
+      if(this.usuario.password === true){
+        return true
+      } else {
+        return false
+      }
+    } else{
+      return false
+    }
+    
   }
 
   establecercontra(){

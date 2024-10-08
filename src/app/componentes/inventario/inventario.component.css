@@ -18,6 +18,20 @@
   transition: all ease-in-out 0.5s;
 }
 
+.search input{
+  border-radius: 22px;
+    border: solid 1px white;
+    background-color: #fff;
+    padding-left:1rem ;
+}
+.frame .icon{
+  transition: all ease-in-out 0.2s;
+
+}
+.frame .icon:hover{
+  transform: scale(1.1);
+}
+
 .filtro select{
   border: solid 1px;
 width: fit-content;
@@ -191,7 +205,9 @@ margin-top: 10vh;
     padding-left: 2.5rem;
 
   }
-
+  .frame .search{
+    margin-top: 0.2rem;
+  }
   .frame{
     grid-template-columns: unset; 
     height: 2.3rem;
@@ -199,9 +215,11 @@ margin-top: 10vh;
 gap: 2px;
   }
   .frame:hover{
-    height: 11.2rem;
+    height: 12.7rem;
   
   }
+
+
   .adding{
     transform: scale(4.5);
   }

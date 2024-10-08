@@ -21,13 +21,19 @@
   </select>
     <!-- <input type="number" id="devolucion" [(ngModel)]="newItem.cantidad" name="devolucion" required min="0" step="1"> -->
 </div>
-<div class="inputs"><label for="categoria">Categoría:</label>
+
+<div class="inputs" [formGroup]="categoriaForm"> <label for="categoria">Categoría:</label> 
+  <select formControlName="categoriaSeleccionada" [(ngModel)]="newItem.categoria" id="categoria"  name="categoria" required>
+  <option *ngFor="let categoriag of categoriasGet" [value]="categoriag.name">{{ categoriag.name }}</option>
+</select></div>
+
+<!-- <div class="inputs"><label for="categoria">Categoría:</label>
   <select id="categoria" [(ngModel)]="newItem.categoria" name="categoria" required>
     <option value="Categoria 1">Categoría 1</option>
     <option value="Categoria 2">Categoría 2</option>
     <option value="Categoria 3">Categoría 3</option>
   </select>
-</div>
+</div> -->
   <div class="inputs" style="padding-bottom: unset;">
     <button class="cerrar" type="button" (click)="closeModal()">Cerrar</button>
     <button class="submit" type="submit">Agregar</button>

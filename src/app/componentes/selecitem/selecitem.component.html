@@ -1,5 +1,26 @@
 <div *ngIf="isVisibleSelec" class="container">
-
+    <div class="filtro">
+        <div class="frame2">
+          <div class="icon"><i class="bi bi-search"></i></div>
+          <div class="search"><input type="text"></div>
+          <div class="item">Estado:</div>
+          <div class="inputs" >
+            <select  >
+              <option value="none">Ninguno</option>
+              <option  value="Disponible" >Disponible</option>
+              <option  value="No disponible">No Disponible</option>
+            </select>
+          </div>
+          <div class="item">Categorías:</div>
+          <div class="inputs" >
+            <select  >
+              <option value="none">Ninguno</option>
+            <!-- <option *ngFor="let categoria of categorias" [ngStyle]="{'color': categoria.color}"  [value]="categoria.name">{{ categoria.name }}</option> -->
+          </select>      </div>
+          <div class="icon" >   <i id="iCat" class="bi bi-plus-circle-fill"></i> </div> 
+      
+        </div>
+      </div>
     <div class="frame">
         <ul class="tabla">
             

@@ -7,7 +7,7 @@
 <!-- Modal Content -->
  <div class="xd">
 <div class="modal-content" *ngIf="isVisible">
-  <h2>Agregar Nuevo Artículo</h2>
+  <div class="titulo"><h2>Agregar Nuevo Artículo</h2></div>
   <form class="forma" (ngSubmit)="addItem()">
     <div><label for="fecha">Fecha:</label>
     <input type="date" id="fecha" [(ngModel)]="newItem.fecha" name="fecha" required>
