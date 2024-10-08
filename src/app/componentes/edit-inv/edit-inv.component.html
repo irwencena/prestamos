@@ -21,7 +21,10 @@
   </select></div>
   <div class="inputs" [formGroup]="categoriaForm"> <label for="categoria">Categoría:</label> 
     <select value="{{selectedItem.categoria}}" formControlName="categoriaSeleccionada" [(ngModel)]="selectedItem.categoria" id="categoria"  name="categoria" required>
-    <option *ngFor="let categoriag of categoriasGet" [value]="categoriag">{{ categoriag }}</option>
+      <option *ngIf="selectedItem?.categoria" [value]="selectedItem.categoria" selected>
+        {{ selectedItem.categoria }}
+      </option>
+      <option *ngFor="let categoriag of categorias" [value]="categoriag.name">{{ categoriag.name }}</option>
   </select></div>
 
 <!-- <div class="inputs"><label for="categoria">Categoría:</label>

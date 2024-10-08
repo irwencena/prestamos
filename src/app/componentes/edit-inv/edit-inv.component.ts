@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { DocaddService } from '../servicios/edicion/docadd.service';
+import { DocaddService } from '../../servicios/edicion/docadd.service';
 @Component({
   selector: 'app-edit-inv',
   standalone: true,
@@ -21,7 +21,7 @@ export class EditInvComponent implements OnInit{
 
   @Output() editClosed = new EventEmitter<void>(); 
 
-  categoriasGet: string[] = [];
+  categorias: { name: string; color: string; }[] = [];
   categoriaForm: FormGroup;
   constructor(private docadd: DocaddService, private fb: FormBuilder) {
     this.categoriaForm = this.fb.group({
@@ -33,15 +33,14 @@ export class EditInvComponent implements OnInit{
   }
 
 
-   async obtenerCat() {
+  async obtenerCat() {
     try {
-      const categorias2: string[] = await this.docadd.getCat();
-      this.categoriasGet = categorias2;  // Ahora 'categorias2' es un arreglo de strings
+      this.categorias =  await this.docadd.getCat();
     } catch (error) {
       console.error("Error al obtener categorías", error);
-      this.categoriasGet = [];  // En caso de error, asigna un arreglo vacío
     }
   }
+  
 
   closeEdit() {
     this.editClosed.emit(); 

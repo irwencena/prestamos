@@ -15,10 +15,10 @@
 		<p>{{ usuario.nivel }}</p>
 	  </div>
 	</div>
-	<div class="bot" *ngIf="usuario.password === false " (click)="establecercontra()">
+	<div class="bot" *ngIf="checarpassword('es')" (click)="establecercontra()">
 		<header >ESTABLECER CONTRASEÑA</header>
 	</div>
-	<div class="bot" *ngIf="usuario.password !== false " (click)="establecercontra()">
+	<div class="bot" *ngIf="checarpassword('mod') " (click)="establecercontra()">
 		<header style="background-color: white; color: #406ff3 ;">MODIFICAR CONTRASEÑA</header>
 	</div>
  </div>

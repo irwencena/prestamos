@@ -55,3 +55,55 @@
         width: 100%; 
         }
         
+
+        .frame2{    transition: all ease-in-out 0.5s;
+
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          overflow: hidden;
+          display: grid;
+          background: #406ff3;
+          border-radius: 22px;
+          grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); 
+          gap: 10px;
+          justify-content: center;
+          justify-items: center;   
+          align-items: center;     
+          text-align: center;
+          color: white;
+          
+          transition: all ease-in-out 0.5s;
+          
+          }
+          .filtro{
+            margin-top: 1rem;
+            padding-left: 8rem;
+            max-width: 100%;
+            padding-right: 1rem;
+            transition: all ease-in-out 0.5s;
+          }
+          
+          .search input{
+            border-radius: 22px;
+              border: solid 1px white;
+              background-color: #fff;
+              padding-left:1rem ;
+          }
+          .frame2 .icon{
+            transition: all ease-in-out 0.2s;
+          
+          }
+          .frame2 .icon:hover{
+            transform: scale(1.1);
+          }
+          
+          .filtro select{
+            border: solid 1px;
+          width: fit-content;
+          padding: 0.3rem 0.4rem;
+          padding-left: 0.8rem;
+             border-radius: 22px;
+          border: solid 1px white;
+          background-color: #fff;
+          }
+          

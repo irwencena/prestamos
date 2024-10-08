@@ -1,0 +1,30 @@
+<div class="modal-background" *ngIf="isVisibleEdit" (click)="closeEdit()"></div>
+
+<div class="container" *ngIf="isVisibleEdit">  
+    <div class="titulo">
+       <h2>CATEGORIA</h2>
+    </div>
+    <div class="frame">
+       <div class="newcategoria">
+          <p>Nueva categoría: </p>
+          <input [(ngModel)]="newcategoria.name" [ngStyle]="{'color': newcategoria.color}" type="text" id="txtcat">
+       </div>
+       <div class="colortext">
+          <p>Color: </p>
+       </div>
+       <div class="crearbtn">
+          <input [(ngModel)]="newcategoria.color" type="color" id="color" value="#69FFB7">
+          <button (click)="testing()" class="btncrear">Crear categoria</button>
+       </div>
+       <div class="borrarcat">
+          <p>Categoria: </p>
+          <select name="selec" id="">
+             <option value="selec">Seleccionar categoria</option>
+             <option *ngFor="let categoriag of categorias" [value]="categoriag">{{ categoriag.name }}</option>
+          </select>
+       </div>
+       <div class="btnfinal">
+        <button class="cerrar" type="button" (click)="closeEdit()">Cerrar</button>
+       <button class="btndel">Eliminar categoría</button></div>
+    </div>
+ </div>
