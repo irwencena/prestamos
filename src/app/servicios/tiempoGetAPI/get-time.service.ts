@@ -6,34 +6,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GetTimeService { constructor(private httpClient: HttpClient) {}
-hora: any = this.getDatetime();
+APIurl: string = 'http://worldtimeapi.org/api/timezone/America/Mexico_City'
 
-
-getDatetime() {
-  this.httpClient.get('http://worldtimeapi.org/api/timezone/America/Mexico_City').subscribe(
-    (data: any) => {
-      const serverTime = new Date(data.datetime);  
-      const hora = serverTime.getHours(); 
-      return serverTime
-      if (this.hora >= 7 && this.hora <= 19) {
-        return true;  
-      } else {
-        return false;
-      }      
-    },
-    (error) => {
-      console.error('Error al obtener la hora del servidor', error);  
-    }
-  );
+HorarioCheck(): Promise<boolean> {
+  return new Promise((resolve, reject) => {
+    this.httpClient
+      .get(this.APIurl)
+      .subscribe(
+        (data: any) => {
+          const serverTime = new Date(data.datetime);
+          const hora = serverTime.getHours();
+          if (hora >= 7 && hora <= 19) {
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        },
+        (error) => {
+          console.error('Error al obtener la hora del servidor', error);
+          reject(error);
+        }
+      );
+  });
 }
 
-verificarhora(){
-  this.getDatetime()
-  console.log(this.hora)
-  if (this.hora >= 7 && this.hora <= 19) {
-    return true;  
-  } else {
-    return false;
-  }
-}
 }

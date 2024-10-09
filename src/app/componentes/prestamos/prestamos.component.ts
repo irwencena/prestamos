@@ -21,30 +21,12 @@ export class PrestamosComponent implements OnInit {
   usuario: any = {};
   isLoading = false;
   mostrarAdding: boolean = false;
+  showAlertInfo: boolean = false;
 
-  constructor(private docadd: DocaddService, private httpClient: HttpClient) {     
+  constructor(private docadd: DocaddService, private httpClient: HttpClient, private horaService: GetTimeService) {     
   }
-  verificar(){
-this.verificarHora()
- }
-
-  verificarHora() {
-    this.httpClient.get('http://worldtimeapi.org/api/timezone/America/Mexico_City').subscribe(
-      (data: any) => {
-        const serverTime = new Date(data.datetime);  
-        const hora = serverTime.getHours(); 
-        if (hora >= 7 && hora <= 19) {
-          this.mostrarAdding = true;  
-        } else {
-          this.mostrarAdding = false;
-        }
-      },
-      (error) => {
-        console.error('Error al obtener la hora del servidor', error);  // Manejo de error
-      }
-    );
-  }
-  
+ 
+ 
 
   ngOnInit() {
     const usuarioData = sessionStorage.getItem('usuario');
@@ -52,7 +34,23 @@ this.verificarHora()
           this.usuario = JSON.parse(usuarioData)
       }
     this.loadPrestamos(this.usuario);
-    this.verificar()
+
+    this.horaService.HorarioCheck().then((DateAPIBool) => {
+      this.mostrarAdding = DateAPIBool;
+      if (DateAPIBool === false){
+        this.showAlertInfo = true
+      }
+      console.log('¿Estas dentro del horario?, Estado:', this.mostrarAdding);
+    }).catch((error) => {
+      console.error('Error al obtener la hora:', error);
+    });
+    
+      
+
+  }
+
+  cerrarInfoHorario(){
+    this.showAlertInfo = false
   }
 
   openModal() {

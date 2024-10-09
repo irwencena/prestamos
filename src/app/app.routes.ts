@@ -8,8 +8,8 @@ import { AddPrestamoComponent } from './componentes/add-prestamo/add-prestamo.co
 import { AdministrarComponent } from './componentes/administrar/administrar.component';
 import { InventarioComponent } from './componentes/inventario/inventario.component';
 import { SelecitemComponent } from './componentes/selecitem/selecitem.component';
-import { AddInvComponent } from './add-inv/add-inv.component';
-import { NewpassComponent } from './newpass/newpass.component';
+import { AddInvComponent } from './componentes/add-inv/add-inv.component';
+import { NewpassComponent } from './componentes/newpass/newpass.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },

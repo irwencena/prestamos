@@ -3,7 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../servicios/autenticacion/auth.service';
 import { FormsModule } from '@angular/forms';
-import { AlertaloginComponent } from "../../alertalogin/alertalogin.component";
+import { AlertaloginComponent } from "../alertalogin/alertalogin.component";
 import { DocaddService } from '../../servicios/edicion/docadd.service';
 
 

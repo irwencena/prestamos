@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DocaddService } from '../../servicios/edicion/docadd.service';
-import { AddInvComponent } from '../../add-inv/add-inv.component';
+import { AddInvComponent } from '../add-inv/add-inv.component';
 import { EditInvComponent } from "../edit-inv/edit-inv.component";
 import { EditcatComponent } from '../editcat/editcat.component';
 

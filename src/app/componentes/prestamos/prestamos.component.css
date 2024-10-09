@@ -128,4 +128,26 @@
       transition: all ease-in-out 0.12s;
       
       }
+      .modal-dialog{
+        width: unset !important;
+       }
    }
+
+   .modal-dialog{
+    width: fit-content;
+   }
+   .modal-content{
+    border-radius: 22px;text-align: center;
+   }
+   .btn-secondary {
+    border-radius: 22px;
+    border-color: #406ff3;
+    background-color: white;
+    color: #406ff3;
+  }
+  .btn-secondary:hover {
+    border-radius: 22px;
+    border-color: white;
+    background-color:#406ff3;
+    color: white;
+  }

@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Firestore, doc, updateDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { DocaddService } from '../servicios/edicion/docadd.service';
+import { DocaddService } from '../../servicios/edicion/docadd.service';
 
 @Component({
   selector: 'app-newpass',
