@@ -5,6 +5,12 @@
 (itemAdded)="addItem($event)">
 </app-add-inv >
 
+<app-editcat 
+[isVisibleEdit]="isEditCatVisible"
+(editCatClosed)="closeEditCat()"
+>
+</app-editcat >
+
 <app-edit-inv 
 (editClosed)="closeEdit()" 
 [isVisibleEdit]="isEditVisible"
@@ -17,22 +23,26 @@
 
 <div class="filtro">
   <div class="frame">
-    <div class="icon"><i class="bi bi-funnel-fill"></i></div>
+    <div class="icon"><i class="bi bi-search"></i></div>
+    <div class="search" [formGroup]="categoriaForm">
+      <input type="text" formControlName="textoBusqueda" placeholder="Buscar...">
+    </div>
+    
     <div class="item">Estado:</div>
     <div class="inputs" [formGroup]="categoriaForm">
-      <select formControlName="estadoSeleccionado">
+      <select formControlName="estadoSeleccionado" >
         <option value="none">Ninguno</option>
-        <option value="Disponible">Disponible</option>
-        <option value="No disponible">No Disponible</option>
+        <option  value="Disponible" >Disponible</option>
+        <option  value="No disponible">No Disponible</option>
       </select>
     </div>
     <div class="item">Categorías:</div>
     <div class="inputs" [formGroup]="categoriaForm">
       <select  formControlName="categoriaSeleccionada">
         <option value="none">Ninguno</option>
-      <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+      <option *ngFor="let categoria of categorias" [ngStyle]="{'color': categoria.color}"  [value]="categoria.name">{{ categoria.name }}</option>
     </select>      </div>
-    <div class="icon">   <i id="iCat" class="bi bi-plus-circle-fill"></i> </div> 
+    <div class="icon" (click)="OpenEditCat()">   <i id="iCat" class="bi bi-plus-circle-fill"></i> </div> 
 
   </div>
 </div>
@@ -55,7 +65,7 @@
         <div class="col1">{{ inv.noeco }}</div>
         <div class="col1">{{ inv.articulo }}</div>
         <div class="col1" style="font-size: smaller;" [ngStyle]="{ color: inv.estado === 'Disponible' ? '#406ff3' : 'red' }">{{ inv.estado }}</div>
-        <div class="col2" [ngStyle]="{ color: inv.categoria === 'Categoria 2' ? '#406ff3' : '#ffaf3e' }">
+        <div class="col2" [ngStyle]="{ 'color': getcolorcat(inv.categoria) }">
           {{ inv.categoria }}
         </div>
       </li>

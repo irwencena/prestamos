@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { firebaseConfig } from '../firebase-config';
 import { doc, getFirestore, setDoc,getDoc, query, collection, getDocs, addDoc, where, updateDoc, deleteDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
-import { BehaviorSubject, range } from 'rxjs';
 import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocaddService {
   private db = getFirestore(initializeApp(firebaseConfig));
-  constructor(private router: Router) {  
+  constructor(private router: Router, ) {  
     const DataUsuario =  sessionStorage.getItem('usuario')
     if (DataUsuario) {
       this.usuario = JSON.parse(DataUsuario);
@@ -33,6 +33,17 @@ export class DocaddService {
       console.error('error al agregar doc: ', error);
     }
   }
+
+  async addCat(data: any){
+    try {
+      const docRef = await addDoc(collection(this.db, 'categorias'), data);
+
+      console.log('Categora añadida: ' ,data)
+    } catch (error) {
+      console.log('error en añadir categoria a firebase: ', error)
+    }
+  }
+
   async useradd(data: any) {
     try {
       const docRef = doc(this.db, 'usuarios', data.nocontrol);
@@ -115,7 +126,6 @@ export class DocaddService {
   
   async actualizarPass(newPassword: any, control: any){
     try {
-      // Actualizar la contraseña en Firestore
       const userDocRef = doc(this.db, `usuarios/${control}`);
       await updateDoc(userDocRef, {
         pass: newPassword
@@ -159,7 +169,6 @@ export class DocaddService {
       if (userDocSnap.exists()) {
         const userData = userDocSnap.data();
   
-        // Verificar si el campo "pass" existe en los datos
         if ('pass' in userData) {
           return true;
         } else {
@@ -185,19 +194,15 @@ export class DocaddService {
     }
 
     try {
-      // Extraer número de control del correo ingresado, eliminando la letra "l"
-      const nocontrol = emailIngresado.split('@')[0].substring(1);  // "20270764" de "l20270764@quer..."
+      const nocontrol = emailIngresado.split('@')[0].substring(1);  
 
-      // Referencia al documento del usuario en Firestore
       const userRef = doc(this.db, `usuarios/${nocontrol}`);
       const docSnap = await getDoc(userRef);
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
 
-        // Comparar el correo y la contraseña con los ingresados
         if (userData['email'] === emailIngresado && userData['pass'] === passIngresado) {
-          // Si coinciden, guardar en sessionStorage
           sessionStorage.setItem('usuario', JSON.stringify(userData));
           this.router.navigate(['/perfil']);
 
@@ -213,27 +218,24 @@ export class DocaddService {
 }
 categorias: string[] = [];
 
-async getCat(): Promise<string[]> {
-  const categorias: string[] = [];
-
+async getCat(): Promise<{ name: string, color: string }[]> {
   try {
     const querySnapshot = await getDocs(collection(this.db, 'categorias'));
 
-    querySnapshot.forEach(doc => {
-      const data = doc.data();
-      // Iterar sobre todas las claves del documento y agregar sus valores al arreglo
-      Object.keys(data).forEach(key => {
-        categorias.push(data[key]);  // Agregar cada valor de las categorías al arreglo local
-      });
-    });
+    // Mapeamos los documentos a un arreglo de objetos con 'name' y 'color'
+    const categorias = querySnapshot.docs.map(doc => ({
+      name: doc.data()['name'],
+      color: doc.data()['color']
+    }));
 
-    return categorias;  // Retornar el arreglo de categorías al final
+    return categorias;  // Retornar el arreglo de categorías correctamente tipado
   } catch (error) {
     console.error("Error al obtener las categorías: ", error);
     return [];  // Retornar un arreglo vacío en caso de error
   }
-}
 
+  
+}
 
 
 

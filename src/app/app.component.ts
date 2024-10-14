@@ -6,6 +6,7 @@ import { NavegacionComponent } from "./componentes/navegacion/navegacion.compone
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule,
     
     RouterOutlet, CommonModule, LoginComponent, NavegacionComponent,
+     
 
   ],
   templateUrl: './app.component.html',

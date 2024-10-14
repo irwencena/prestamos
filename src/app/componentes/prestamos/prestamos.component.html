@@ -3,6 +3,23 @@
     (modalClosed)="closeModal()"
     (itemAdded)="addItem($event,usuario)">
   </app-add-prestamo>
+  
+  <div class="modal fade" tabindex="-1" [ngClass]="{'show':showAlertInfo }" [ngStyle]="{'display': showAlertInfo ? 'block' : 'none'}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Aviso Importante</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="cerrarInfoHorario()"></button>
+        </div>
+        <div class="modal-body">
+          <p>El horario para solicitar prestamos es de 7 am - 7 pm.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cerrarInfoHorario()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="container">
     
     <ul class="tabla">
@@ -24,11 +41,12 @@
         </div>
       </li>
     </ul>
-    <div class="adding">
+    <div class="adding" *ngIf="mostrarAdding">
       <span class="icon" (click)="openModal()">
         <i class="bi bi-plus-circle-fill"></i>
       </span>
     </div>
+    
   </div>
   
   

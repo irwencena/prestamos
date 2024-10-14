@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { LoginComponent } from '../componentes/login/login.component';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-alertalogin',
